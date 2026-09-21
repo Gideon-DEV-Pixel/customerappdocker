@@ -5,7 +5,7 @@ COPY src src
 COPY pom.xml pom.xml
 RUN mvn clean install -Dmaven.test.skip=true
 
-FROM openjdk:21-jdk
+FROM eclipse-temurin:21-jdk
 LABEL version=1.0-SNAPSHOT
 COPY --from=build target/customer-0.0.1-SNAPSHOT.jar customer-0.0.1-SNAPSHOT.jar
 EXPOSE 8085
